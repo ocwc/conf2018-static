@@ -12,11 +12,8 @@
 <body class="home">
 <div class="off-canvas-wrapper">
     <div class="title-bar hide-for-large mobile-header">
-        <div class="row align-middle">
-            <div class="small-6 medium-6 medium-offset-0 column text-left">
-                <a class="clearfix" href="/"><img class="logo-small" src="/images/logo-white.svg"/></a>
-            </div>
-            <div class="small-6 column text-right mobile-header--menu">
+        <div class="row collapse">
+            <div class="small-12 column text-left mobile-header--menu">
                 <button type="button" data-open="offCanvas">
                     <span class="menu-icon"></span>
                     <span class="menu-label">MENU</span>
@@ -25,7 +22,7 @@
         </div>
     </div>
 
-    <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
         <ul class="vertical menu" data-drilldown>
             <li>
                 <a href="#Item-1">Item 1</a>
@@ -78,6 +75,12 @@
 
     <div class="off-canvas-content" data-off-canvas-content>
         <div class="header--home">
+            <div class="row hide-for-large logo-small-container">
+                <div class="small-12 column text-center">
+                    <a class="clearfix" href="/"><img class="logo-small" src="/images/logo-white.svg"/></a>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="medium-8 medium-offset-4 column contents">
                     <h1>Event Slogan</h1>

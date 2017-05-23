@@ -66,7 +66,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 
-  background-position: center rem-calc(0);
+  background-position: center 0;
 
   @include breakpoint(large) {
     background-position: center rem-calc(150);
@@ -78,10 +78,14 @@ body.home {
 }
 
 /* Header */
+.logo-small-container {
+  margin: rem-calc(-50) 0 rem-calc(20);
+}
+
 .logo-small {
   width: auto;
   height: auto;
-  max-height: rem-calc(80);
+  max-height: rem-calc(105);
 }
 
 .menu-icon {
@@ -119,6 +123,10 @@ body.home {
 .home .mobile-header,
 .home .menu-desktop {
   background: none;
+
+  @include breakpoint(medium down) {
+    background: $blueDark;
+  }
 }
 
 .off-canvas {
@@ -138,16 +146,16 @@ body.home {
 }
 
 .header--social {
-  padding-top: rem-calc(12);
+  padding-top: rem-calc(28);
   color: $white;
-  font-size: rem-calc(14);
+  font-size: rem-calc(12);
   text-transform: uppercase;
 }
 
 .social-icon {
   height: rem-calc(26);
   margin-left: rem-calc(5);
-  margin-top: rem-calc(-2);
+  margin-top: rem-calc(-10);
 }
 
 .header--dropdown {
@@ -209,18 +217,29 @@ body.home {
 
 /* Home */
 
+$header-xlarge-top-margin: rem-calc(236);
 .header--home {
   position: relative;
-  margin-top: rem-calc(-300);
-  padding-top: rem-calc(300);
-  padding-bottom: rem-calc(35);
+  margin-top: -$header-xlarge-top-margin;
+  padding-top: $header-xlarge-top-margin;
+  padding-bottom: rem-calc(120);
 
   z-index: 0;
-
-  background: #3cb3db url('/images/windmills.jpg') no-repeat center top;
-  background-size: 1200px auto;
-
   color: $white;
+
+  background: #009ed2 url('/images/bg-image-large.png') no-repeat center top;
+  background-size: 600px bottom;
+
+  @include breakpoint(medium) {
+    background: #009ed2 url('/images/bg-image-large.png') no-repeat center top;
+    background-size: 1200px auto;
+  }
+
+  @include breakpoint(xlarge) {
+    background: #009ed2 url('/images/bg-image-xlarge.jpg') no-repeat center top;
+    background-size: 1398px auto;
+
+  }
 }
 
 .header--home--license {
@@ -230,10 +249,14 @@ body.home {
 .header--home--license span {
   position: absolute;
   display: block;
-  bottom: rem-calc(-25);
+  bottom: 0;
   right: rem-calc(10);
   font-size: rem-calc(11);
   font-weight: bold;
+
+  @include breakpoint(xlarge) {
+    right: rem-calc(0);
+  }
 }
 
 .header--home > .row::after {
@@ -247,23 +270,39 @@ body.home {
   right: 0;
   //z-index: 0;
 
-  background-image: url('/images/home-overlay.svg');
+  background-image: url('/images/abstract-small.svg');
   background-repeat: no-repeat;
   background-position: center top;
 
   @include breakpoint(medium) {
-    //background-size: 120%;
+    background-image: url('/images/abstract-large.svg');
     background-position: center top;
   }
 
   @include breakpoint(large) {
     background-size: auto auto;
+    background-image: url('/images/abstract-xlarge.svg');
   }
 }
 
 .header--home .contents {
   position: relative;
   z-index: 1;
+  margin-top: rem-calc(20);
+
+  @include breakpoint(medium) {
+    margin-left: calc(30%);
+  }
+
+
+  @include breakpoint(large) {
+    padding-left: rem-calc(10);
+  }
+
+  @include breakpoint(xlarge) {
+    padding-left: rem-calc(50);
+  }
+
 }
 
 .header--home h1 {
@@ -285,19 +324,24 @@ body.home {
   font-size: rem-calc(16);
 }
 
+$box-height: rem-calc(115);
+
 .home--boxes {
+  position: relative;
   background-color: #3cb3db;
+  margin-top: -$box-height;
+  z-index: 200;
 }
 
 .home--boxes > .column {
-  min-height: rem-calc(125);
+  min-height: $box-height;
 }
 
 .home--boxes a {
   display: block;
   width: 100%;
-  height: rem-calc(125);
-  line-height: rem-calc(125);
+  height: $box-height;
+  line-height: $box-height;
   text-align: center;
 
   font-size: rem-calc(25);
