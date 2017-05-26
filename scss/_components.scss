@@ -45,6 +45,8 @@ h1 {
 /* Buttons */
 
 .button.hollow.white {
+  border: 2px solid;
+
   &:hover, &:focus {
     background-color: $white;
     color: $blueDark;
@@ -79,7 +81,13 @@ body.home {
 
 /* Header */
 .logo-small-container {
+  position: inherit;
+  z-index: 20;
   margin: rem-calc(-50) 0 rem-calc(20);
+
+  a {
+    position: relative;
+  }
 }
 
 .logo-small {
@@ -152,6 +160,12 @@ body.home {
   text-transform: uppercase;
 }
 
+.home .header--social {
+  @include breakpoint(large){
+    margin-bottom: rem-calc(-25);
+  }
+}
+
 .social-icon {
   height: rem-calc(26);
   margin-left: rem-calc(5);
@@ -217,22 +231,27 @@ body.home {
 
 /* Home */
 
+$header-small-top-margin: rem-calc(70);
 $header-xlarge-top-margin: rem-calc(236);
 .header--home {
   position: relative;
-  margin-top: -$header-xlarge-top-margin;
-  padding-top: $header-xlarge-top-margin;
-  padding-bottom: rem-calc(120);
+  padding-bottom: rem-calc(10);
+  padding-top: $header-small-top-margin;
 
   z-index: 0;
   color: $white;
 
   background: #009ed2 url('/images/bg-image-large.png') no-repeat center top;
-  background-size: 600px bottom;
+  background-size: 101% bottom;
 
   @include breakpoint(medium) {
     background: #009ed2 url('/images/bg-image-large.png') no-repeat center top;
     background-size: 1200px auto;
+
+    margin-top: -$header-xlarge-top-margin;
+    padding-top: $header-xlarge-top-margin;
+
+    padding-bottom: rem-calc(120);
   }
 
   @include breakpoint(xlarge) {
@@ -242,8 +261,10 @@ $header-xlarge-top-margin: rem-calc(236);
   }
 }
 
-.header--home--license {
+.header--home--license,
+.header--home--notice{
   position: relative;
+  z-index: 200;
 }
 
 .header--home--license span {
@@ -259,7 +280,27 @@ $header-xlarge-top-margin: rem-calc(236);
   }
 }
 
-.header--home > .row::after {
+.header--home--notice span {
+  position: absolute;
+  display: block;
+  bottom: 0;
+
+  font-size: rem-calc(11);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  right: 25%;
+
+  @include breakpoint(medium) {
+    right: 42.5%;
+  }
+  @include breakpoint(large) {
+    right: 45%;
+  }
+
+}
+
+.home .contents-container::after {
   display: block;
   position: absolute;
   content: " ";
@@ -268,7 +309,7 @@ $header-xlarge-top-margin: rem-calc(236);
   bottom: 0;
   left:0;
   right: 0;
-  //z-index: 0;
+  z-index: 10;
 
   background-image: url('/images/abstract-small.svg');
   background-repeat: no-repeat;
@@ -287,20 +328,25 @@ $header-xlarge-top-margin: rem-calc(236);
 
 .header--home .contents {
   position: relative;
-  z-index: 1;
+  z-index: 20;
   margin-top: rem-calc(20);
+
+  margin-left: rem-calc(15);
+
+  @include breakpoint(small only) {
+    text-align: center;
+  }
 
   @include breakpoint(medium) {
     margin-left: calc(30%);
   }
 
-
   @include breakpoint(large) {
-    padding-left: rem-calc(10);
+    padding-left: rem-calc(60);
   }
 
   @include breakpoint(xlarge) {
-    padding-left: rem-calc(50);
+    padding-left: rem-calc(100);
   }
 
 }
@@ -319,39 +365,84 @@ $header-xlarge-top-margin: rem-calc(236);
 }
 
 .header--home--cta {
-  margin-top: rem-calc(100);
-  margin-bottom: rem-calc(50);
+  margin-top: rem-calc(30);
+  margin-bottom: rem-calc(140);
   font-size: rem-calc(16);
+
+  @include breakpoint(medium) {
+    margin-top: rem-calc(100);
+    margin-bottom: rem-calc(50);
+  }
 }
 
 $box-height: rem-calc(115);
+$box-small-height: rem-calc(88);
 
 .home--boxes {
   position: relative;
   background-color: #3cb3db;
-  margin-top: -$box-height;
   z-index: 200;
+
+  @include breakpoint(medium) {
+    margin-top: -$box-height;
+  }
 }
 
 .home--boxes > .column {
-  min-height: $box-height;
+  min-height: $box-small-height;
+
+  @include breakpoint(medium) {
+    min-height: $box-height;
+  }
 }
 
 .home--boxes a {
   display: block;
   width: 100%;
-  height: $box-height;
-  line-height: $box-height;
+  height: $box-small-height;
+  line-height: $box-small-height;
   text-align: center;
 
-  font-size: rem-calc(25);
+  font-size: rem-calc(12);
   font-weight: bold;
   color: $white;
   text-transform: uppercase;
+
+  @include breakpoint(small only) {
+    position: relative;
+    padding-top: rem-calc(20);
+    font-size: rem-calc(12);
+
+  }
+
+  @include breakpoint(medium) {
+    height: $box-height;
+    line-height: $box-height;
+    font-size: rem-calc(16);
+  }
+
+  @include breakpoint(large) {
+    font-size: rem-calc(25);
+  }
 }
 
 .home--boxes img {
-  margin-right: rem-calc(5);
+  width: rem-calc(33);
+
+  @include breakpoint(small only) {
+    position: absolute;
+    top: rem-calc(12);
+    left: calc(50% - 16px);
+  }
+
+  @include breakpoint(medium) {
+    margin-right: rem-calc(5);
+    width: rem-calc(40);
+  }
+
+  @include breakpoint(large) {
+    width: rem-calc(45);
+  }
 }
 
 .home--intro {

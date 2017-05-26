@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row contents-container">
                 <div class="medium-8 medium-offset-4 column contents">
                     <h1>Event Slogan</h1>
                     <h2>1-5 April 2018</h2>
@@ -89,7 +89,10 @@
 
                     <a href="#" class="button white hollow header--home--cta">Register</a>
                 </div>
-                <div class="small-12 columns header--home--license">
+                <div class="small-12 columns header--home--notice">
+                    <span><img src="/images/down.svg"/> Scroll down for more info</span>
+                </div>
+                <div class="small-12 columns header--home--license hide-for-small-only">
                     <span>
                         <img src="/images/cc-white.svg"/> WILLEM VAN VALKENBURG
                     </span>
@@ -99,17 +102,29 @@
 
         <div style="background-color: #3cb3db;">
             <div class="row align-middle home--boxes">
-                <div class="medium-3 column u-background-orange">
-                    <a href="#"><img src="/images/icon-location.svg"/> Venue</a>
+                <div class="small-3 column u-background-orange">
+                    <a href="#">
+                        <img src="/images/icon-location.svg"/>
+                        Venue
+                    </a>
                 </div>
-                <div class="medium-3 column u-background-blue">
-                    <a href="#"><img src="/images/icon-calendar.svg"/> Schedule</a>
+                <div class="small-3 column u-background-blue">
+                    <a href="#">
+                        <img src="/images/icon-calendar.svg"/>
+                        Schedule
+                    </a>
                 </div>
-                <div class="medium-3 column u-background-red">
-                    <a href="#"><img src="/images/icon-speaker.svg"/> Speakers</a>
+                <div class="small-3 column u-background-red">
+                    <a href="#">
+                        <img src="/images/icon-speaker.svg"/>
+                        Speakers
+                    </a>
                 </div>
-                <div class="medium-3 column u-background-purple">
-                    <a href="#"><img src="/images/icon-award.svg"/> Awards</a>
+                <div class="small-3 column u-background-purple">
+                    <a href="#">
+                        <img src="/images/icon-award.svg"/>
+                        Awards
+                    </a>
                 </div>
             </div>
         </div>
@@ -127,7 +142,8 @@
                     anim id est laborum.</p>
                 <p class="home--intro--buttons">
                     <a href="#" class="button orange hollow text-uppercase">About the Event</a>
-                    <a href="http://conference.oeconsortium.org/2017/" target="_blank" class="button orange hollow text-uppercase">View 2017 Conference</a>
+                    <a href="http://conference.oeconsortium.org/2017/" target="_blank"
+                       class="button orange hollow text-uppercase">View 2017 Conference</a>
                 </p>
             </div>
         </div>
