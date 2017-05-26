@@ -130,10 +130,10 @@
         </div>
 
         <div class="row home--intro">
-            <div class="medium-5 large-5 medium-offset-1 column">
+            <div class="small-10 small-offset-1 medium-5 large-5 medium-offset-1 column">
                 <img src="/images/logo.svg"/>
             </div>
-            <div class="medium-5 large-5 column">
+            <div class="small-10 small-offset-1 medium-5 medium-offset-0 large-5 column">
                 <p class="home--intro--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
